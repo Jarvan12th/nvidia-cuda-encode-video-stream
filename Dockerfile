@@ -8,7 +8,18 @@ WORKDIR /app
 COPY . /app
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y gcc python3-dev libgl1-mesa-dev libglib2.0-0 ffmpeg libnvidia-compute-535
+RUN #apt-get update && apt-get install -y gcc python3-dev libgl1-mesa-dev libglib2.0-0 ffmpeg libnvidia-compute-535
+# Install system dependencies including apt-file for searching packages
+RUN apt-get update && apt-get install -y \
+    gcc \
+    python3-dev \
+    libgl1-mesa-dev \
+    libglib2.0-0 \
+    ffmpeg \
+    apt-file \
+    && apt-file update \
+    && apt-file search libcuda.so.1 \
+    && rm -rf /var/lib/apt/lists/*  # Clean up to reduce image size
 
 # Install Python packages specified in requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
