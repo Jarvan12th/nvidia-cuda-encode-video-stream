@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y gcc python3-dev libgl1-mesa-dev libglib2.0-0 ffmpeg libcuda.so.1
+RUN apt-get update && apt-get install -y gcc python3-dev libgl1-mesa-dev libglib2.0-0 ffmpeg libnvidia-compute-535-server
 
 # Install Python packages specified in requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
