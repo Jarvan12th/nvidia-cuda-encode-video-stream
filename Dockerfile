@@ -18,8 +18,8 @@ RUN apt-get update && apt-get install -y \
     ffmpeg \
     apt-file \
     && apt-file update \
-    && apt-file search libcuda.so.1 \
-    && rm -rf /var/lib/apt/lists/*  # Clean up to reduce image size
+    && apt-file search libcuda.so.1
+#    && rm -rf /var/lib/apt/lists/*  # Clean up to reduce image size
 
 # Install Python packages specified in requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
