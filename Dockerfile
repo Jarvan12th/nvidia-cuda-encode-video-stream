@@ -1,5 +1,5 @@
 # Use an NVIDIA CUDA image as the base image
-FROM nvidia/cuda:11.0-runtime-ubuntu20.04
+FROM nvidia/cuda:12.0.0-runtime-ubuntu22.04
 
 # Set the working directory in the container
 WORKDIR /app
