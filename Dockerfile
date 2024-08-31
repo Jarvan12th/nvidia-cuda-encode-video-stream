@@ -1,5 +1,5 @@
-# Use an official Python runtime as the parent image
-FROM python:3.8-slim
+# Use an NVIDIA CUDA image as the base image
+FROM nvidia/cuda:11.0-runtime-ubuntu20.04
 
 # Set the working directory in the container
 WORKDIR /app
@@ -8,21 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y gcc python3-dev libgl1-mesa-dev libglib2.0-0 ffmpeg apt-file
-# Install system dependencies including apt-file for searching packages
-
-RUN apt-file update
-RUN apt-file search libcuda.so.1
-#RUN apt-get update && apt-get install -y \
-#    gcc \
-#    python3-dev \
-#    libgl1-mesa-dev \
-#    libglib2.0-0 \
-#    ffmpeg \
-#    apt-file \
-#    && apt-file update \
-#    && apt-file search libcuda.so.1 \
-#    && rm -rf /var/lib/apt/lists/*  # Clean up to reduce image size
+RUN apt-get update && apt-get install -y gcc python3-dev libgl1-mesa-dev libglib2.0-0 ffmpeg && rm -rf /var/lib/apt/lists/*
 
 # Install Python packages specified in requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
