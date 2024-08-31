@@ -1,0 +1,4 @@
+fastapi[all]~=0.109.1
+requests~=2.31.0
+opencv-python==4.10.0.84
+ffmpeg-python==0.2.0

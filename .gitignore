@@ -1,0 +1,9 @@
+# MacOS
+.DS_Store
+
+# IntelliJ
+.idea/
+
+# Virtual Environment
+/nvidia-cuda-encode-video-stream
+__pycache__/
