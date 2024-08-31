@@ -1,4 +1,4 @@
-# vit-fire-detection
+# nvidia-cuda-encode-video-stream
 
 ## Create a virtual environment
 
