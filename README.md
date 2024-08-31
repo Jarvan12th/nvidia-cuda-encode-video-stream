@@ -1,9 +1,5 @@
 # vit-fire-detection
 
-## Install dependencies and build Docker image
-
-```python3 app/main.py```
-
 ## Create a virtual environment
 
 ```python3 -m venv nvidia-cuda-encode-video-stream```
