@@ -4,7 +4,7 @@ services:
     image: jarvan12th/nvidia-cuda-encode-video-stream:v1.0
     command: uvicorn main:app --host 0.0.0.0 --port 4000 --reload
     volumes:
-      - ./app/main.py:/app/main.py
+      - ./main.py:/app/main.py
     ports:
       - "4000:4000"
     depends_on:
