@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y gcc python3.8 python3-pip python3.8-dev libgl1-mesa-dev libglib2.0-0 ffmpeg && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y gcc python3.10 python3-pip python3-dev libgl1-mesa-dev libglib2.0-0 ffmpeg && rm -rf /var/lib/apt/lists/*
 
 # Install Python packages specified in requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
