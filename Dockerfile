@@ -49,8 +49,8 @@ RUN git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg && \
 
 # Create symbolic link and set LD_LIBRARY_PATH
 RUN ln -s /usr/local/cuda/lib64/stubs/libcuda.so /usr/local/cuda/lib64/stubs/libcuda.so.1
-ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64/stubs/:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
-RUN rm /usr/local/cuda/lib64/stubs/libcuda.so.1
+#ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64/stubs/:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+#RUN rm /usr/local/cuda/lib64/stubs/libcuda.so.1
 
 # Expose the port the app runs on
 EXPOSE 4000
