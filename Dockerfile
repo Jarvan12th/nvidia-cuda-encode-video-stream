@@ -28,7 +28,14 @@ RUN apt-get update && apt-get install -y \
     libnuma1 \
     libnuma-dev \
     pkg-config \
+    libnvidia-encode-dev \
     && rm -rf /var/lib/apt/lists/*
+
+# Clone and install ffnvcodec to satisfy cuvid dependencies
+RUN git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git && \
+    cd nv-codec-headers && \
+    make && \
+    make install
 
 # Install Python packages specified in requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
