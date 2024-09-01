@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
     libnuma1 \
     libnuma-dev \
     pkg-config \
-    libnvidia-encode-dev \
+#    libnvidia-encode-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Clone and install ffnvcodec to satisfy cuvid dependencies
