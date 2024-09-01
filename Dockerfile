@@ -34,8 +34,8 @@ RUN apt-get update && apt-get install -y \
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Clone FFmpeg repo and compile with nvdec
-RUN git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg && \
-    cd ffmpeg && \
+RUN git clone https://github.com/FFmpeg/FFmpeg.git && \
+    cd FFmpeg && \
     ./configure --enable-nvdec --enable-cuda-nvcc --enable-cuvid --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 && \
     make -j$(nproc) && \
     make install
