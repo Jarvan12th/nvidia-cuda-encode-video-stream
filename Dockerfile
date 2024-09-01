@@ -43,7 +43,7 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 # Clone FFmpeg repo and compile with nvdec
 RUN git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg && \
     cd ffmpeg && \
-    ./configure --enable-nonfree --disable-shared --enable-nvenc --enable-cuda --enable-nvdec --enable-cuda-nvcc --enable-cuvid --enable-libnpp --extra-cflags=-Ilocal/include --enable-gpl --enable-version3 --disable-debug --disable-ffplay --disable-indev=sndio --disable-outdev=sndio --enable-fontconfig --enable-gray --enable-libx264 --enable-libx265 --enable-libxvid --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 && \
+    ./configure --enable-nonfree --disable-shared --enable-nvenc --enable-cuda --enable-nvdec --enable-cuda-nvcc --enable-cuvid --enable-libnpp --extra-cflags=-Ilocal/include --enable-gpl --enable-version3 --disable-debug --disable-ffplay --disable-indev=sndio --disable-outdev=sndio --enable-libx264 --enable-libx265 --enable-libxvid --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 && \
     make -j$(nproc) && \
     make install
 
